@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>简单介绍一下博客的搭建</title>
-    <link href="/2022/09/02/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
-    <url>/2022/09/02/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/</url>
+    <title>简单记录一下本博客的搭建过程</title>
+    <link href="/2022/09/02/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/"/>
+    <url>/2022/09/02/%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%8B%E6%9C%AC%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol><li>下载</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="搭骨架"><a href="#搭骨架" class="headerlink" title="搭骨架"></a>搭骨架</h1><ol><li>在官网上下载node.js， 在本步骤中会下载好node和npm两个工具， 在命令行中使用npm -v来查验</li><li>使用命令行输入<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>来安装cnpm，并使用了淘宝镜像源加速</li><li>命令行输入<code>cnpm install -g hexo-cli</code>安装hexo</li><li>找一个地方创建存放blog的文件夹，之后的操作若无说明均在blog文件层操作</li><li>命令行输入<code>hexo init</code>初始化获得博客基本框架，这个时候使用<code>hexo s</code>就能看到本地接口的博客界面啦</li></ol><h1 id="代码托管"><a href="#代码托管" class="headerlink" title="代码托管"></a>代码托管</h1><ol><li>在git中创建仓库，仓库名一定要设置为git的用户名</li><li>在文件中找到_config.yml, 在文件的最末尾处修改和添加:</li></ol><p>···</p><pre><code class="hljs">type: gitrepository: 代码的url或sshbranch: master</code></pre><p>···</p><ol start="3"><li>安装提交代码的插件<code>cnmp install --save hexo-deployer-git</code></li><li>命令行<code>hexo d</code>推送本地文件到仓库，然后就可以用”用户名.github.io”远程访问博客了</li></ol><h1 id="换博客主题"><a href="#换博客主题" class="headerlink" title="换博客主题"></a>换博客主题</h1><ol><li>查找论坛或者hexo官网找到合眼缘的主题找到对应的git库</li><li>git clone该库到blog&#x2F;themes中</li><li>在_config.yml中的theme处修改为你要用的库</li><li>重新推送你的库到git中就好了</li><li>具体页面的配置参考你的主题作者提供的参考</li></ol><h1 id="一些简单的使用"><a href="#一些简单的使用" class="headerlink" title="一些简单的使用"></a>一些简单的使用</h1><ol><li><code>hexo clean</code>清除已有的文件</li><li><code>hexo g</code>重新生成</li><li><code>hexo s</code>在本地预览</li><li><code>hexo d</code>推送到git库</li></ol><p>注：前三个为一套，可以每次修改配置的时候进行操作。如果只是写好单篇博客上传则只用4即可</p><h1 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h1><ol><li>建议使用ssh作连接，在git改变安全机制之后url不大好用，至少本人找不到好的解决方案应用到博客的创建</li><li>建议找主题的时候找参考写的比较详细，适合和我一样的入门者做一些基础的设置</li></ol><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ol><li><a href="https://www.bilibili.com/video/BV1Yb411a7ty?spm_id_from=333.880.my_history.page.click">可以全部follow的b站视频</a></li><li><a href="https://github.com/fluid-dev/hexo-theme-fluid">我使用的主题</a></li></ol>]]></content>
     
     
     <categories>
