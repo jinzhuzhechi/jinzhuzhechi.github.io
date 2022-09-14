@@ -24,7 +24,7 @@
 <meta property="og:description" content="1.Introduction Answers to all these questions depend on how well the machine learning models can deal with one common problem, namely the domain shift problem. Such a problem refers to the distributio">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-13T15:15:32.000Z">
-<meta property="article:modified_time" content="2022-09-13T15:33:44.930Z">
+<meta property="article:modified_time" content="2022-09-14T00:12:05.968Z">
 <meta property="article:author" content="jinzhuzhechi">
 <meta property="article:tag" content="论文摘录">
 <meta name="twitter:card" content="summary_large_image">
@@ -274,56 +274,30 @@
               <div class="markdown-body">
                 
                 <h1>1.Introduction</h1>
-<p><em>Answers to all these questions depend on how well the machine learning<br>
-models can deal with one common problem, namely the domain shift<br>
-problem. Such a problem refers to the distribution shift between a set of training (source) data and a set of test (target) data</em></p>
-<p>未知数据域直接能够使模型工作的问题domain shift<br>
-problem，主要是原数据和目标数据的分布不同</p>
-<p><em>Most statistical learning algorithms strongly rely on an<br>
-over-simplified assumption, that is, the source and target data are<br>
-independent and identically distributed (i.i.d.), while ignoring<br>
-out-of-distribution (OOD) scenarios commonly encountered in practice.</em></p>
-<p>大多数数据的学习给予一个过度简化的假设：源数据和目标数据拥有独立且相同的分布（iid），忽略了超出分布的场景(OOD)<br>
-需要在实践中被考虑</p>
-<p><em>A straightforward solution to bypass the OOD data issue is to collect<br>
-some data from the target domain to adapt a source-domain-trained model</em></p>
+<p><em>Answers to all these questions depend on how well the machine learning models can deal with one common problem, namely the domain shift problem. Such a problem refers to the distribution shift between a set of training (source) data and a set of test (target) data</em></p>
+<p>未知数据域直接能够使模型工作的问题domain shift problem，主要是原数据和目标数据的分布不同</p>
+<p><em>Most statistical learning algorithms strongly rely on an over-simplified assumption, that is, the source and target data are independent and identically distributed (i.i.d.), while ignoring out-of-distribution (OOD) scenarios commonly encountered in practice.</em></p>
+<p>大多数数据的学习给予一个过度简化的假设：源数据和目标数据拥有独立且相同的分布（iid），忽略了超出分布的场景(OOD) 需要在实践中被考虑</p>
+<p><em>A straightforward solution to bypass the OOD data issue is to collect some data from the target domain to adapt a source-domain-trained model</em></p>
 <p>有一个简单的解决方案是从目标域中获取一些数据，来修正原始数据域上训练出的模型DA</p>
-<p><em>DA relies on a strong assumption that target data is accessible for<br>
-model adaptation, which does not always hold in practice</em></p>
+<p><em>DA relies on a strong assumption that target data is accessible for model adaptation, which does not always hold in practice</em></p>
 <p>DA基于一个强假设，那就是目标域的数据是可获取用于模型修正的，但这在实践中不总成立</p>
-<p><em>The goal in DG is to learn a model using data from a single or multiple<br>
-related but distinct source domains in such a way that the model can<br>
-generalize well to any OOD target domain.</em></p>
+<p><em>The goal in DG is to learn a model using data from a single or multiple related but distinct source domains in such a way that the model can generalize well to any OOD target domain.</em></p>
 <p>DG的目标是学习一个从单一数据域或多个相关数据域能够很好的拓展到任意OOD的模型</p>
 <h1>2.Background</h1>
 <h2 id="2-1问题的提出">2.1问题的提出</h2>
 <p>为了医学上的模型迁移到新的病人身上</p>
-<p><em>They performed a thorough investigation into the cross-dataset<br>
-generalization performance of object recognition models using six<br>
-popular benchmark datasets. Their findings suggested that dataset<br>
-biases, which are difficult to avoid, can lead to poor generalization<br>
-performance.</em></p>
+<p><em>They performed a thorough investigation into the cross-dataset generalization performance of object recognition models using six popular benchmark datasets. Their findings suggested that dataset biases, which are difficult to avoid, can lead to poor generalization performance.</em></p>
 <p>在六个流行的数据集做了一组实验，发现数据集的差异无法避免，会导致很差的表现</p>
 <h2 id="2-2问题的定义">2.2问题的定义</h2>
-<p><em>Let X be the input (feature) space and Y the target (label) space, a<br>
-domain is defined as a joint distribution PXY on X × Y.</em></p>
-<p>x为输入空间（特征），y为目标空间（标签），而一个域被定义为分布x与y的joint<br>
-distribution</p>
-<p><em>For a specific domain PXY , we refer to PX as the marginal distribution<br>
-on X, PY |X the posterior distribution of Y given X, and PX|Y the<br>
-class-conditional distribution of X given Y .</em></p>
-<p>对于一个特定的域PXY，我们把px称为x的边缘分布，PY |X<br>
-称为给定x的y的后验分布， PX|Y称为给定y的x的类条件分布</p>
-<p><em>In the context of DG, we have access to K similar but distinct source<br>
-domains S = {Sk = {(x(k), y(k))}}Kk=1, each associated with a joint<br>
-distribution P (k) XY . Note that P (k) XY 6= P (k′) XY with k 6= k′ and<br>
-k, k′ ∈ {1, …, K}.</em></p>
+<p><em>Let X be the input (feature) space and Y the target (label) space, a domain is defined as a joint distribution PXY on X × Y.</em></p>
+<p>x为输入空间（特征），y为目标空间（标签），而一个域被定义为分布x与y的joint distribution</p>
+<p><em>For a specific domain PXY , we refer to PX as the marginal distribution on X, PY |X the posterior distribution of Y given X, and PX|Y the class-conditional distribution of X given Y .</em></p>
+<p>对于一个特定的域PXY，我们把px称为x的边缘分布，PY |X 称为给定x的y的后验分布， PX|Y称为给定y的x的类条件分布</p>
+<p><em>In the context of DG, we have access to K similar but distinct source domains S = {Sk = {(x(k), y(k))}}Kk=1, each associated with a joint distribution P (k) XY . Note that P (k) XY 6= P (k′) XY with k 6= k′ and k, k′ ∈ {1, …, K}.</em></p>
 <p>在DG的语境中，我们对K个相似但不同的原始数据域$\mathcal{S} = \left{ S_{k} = \left{ \left( x<sup>{(k)},y</sup>{(k)} \right) \right} \right}_{k = 1}^{K}$每一个都对应一个联合概率分布。而不同数据域之间的分布都是不一样的</p>
-<p><em>The goal of DG is to learn a predictive model f : X → Y using only<br>
-source domain data such that the prediction error on an unseen target<br>
-domain T = {xT } is minimized</em></p>
-<p>DG的目标就是学习一个预测模型f : X →<br>
-Y仅使用源数据域，是的再未知域上预测的误差减到最小</p>
+<p><em>The goal of DG is to learn a predictive model f : X → Y using only source domain data such that the prediction error on an unseen target domain T = {xT } is minimized</em></p>
+<p>DG的目标就是学习一个预测模型f : X → Y仅使用源数据域，是的再未知域上预测的误差减到最小</p>
 <p>DG分两种</p>
 <h3 id="Multi-Source-DG">Multi-Source DG</h3>
 <p>方法大多是专用于多源的，默认K&gt;1</p>
@@ -381,12 +355,7 @@ ImageNet-Sketch [51]</p>
 </li>
 </ul>
 <h2 id="2-4Evaluation">2.4Evaluation</h2>
-<p><em>Evaluation of DG algorithms often follows the leave-one-domain-out rule<br>
-[37]: given a dataset containing at least two distinct domains, one or<br>
-multiple of them are used as source domain(s) for model training while<br>
-the rest are treated as target domain(s);a model learned from the source<br>
-domain(s) is directly tested in the target domain(s) without any form of<br>
-adaptation</em></p>
+<p><em>Evaluation of DG algorithms often follows the leave-one-domain-out rule [37]: given a dataset containing at least two distinct domains, one or multiple of them are used as source domain(s) for model training while the rest are treated as target domain(s);a model learned from the source domain(s) is directly tested in the target domain(s) without any form of adaptation</em></p>
 <p>在一个或多个数据集上训练得模型，不加修改的使用在一个数据集上测试</p>
 <h3 id="Evaluation-Metrics">Evaluation Metrics</h3>
 <p>average and worst-case performance</p>
