@@ -1,0 +1,43 @@
+/*
+ * 图片排版（BlogDrop 维护）
+ * - 单张竖图（高 > 宽）在它独占一行/一段时，宽度限制为 2/3；
+ * - 并排图片组 <div class="bd-img-grid cols-2|cols-3"> 使用 CSS Grid 排列。
+ * 类名由 source/js/blogdrop-image-layout.js 在图片加载后自动添加。
+ */
+#board .markdown-body img.bd-portrait {
+  display: block;
+  max-width: 66%;
+  height: auto;
+  margin: 1.4em auto;
+}
+
+#board .markdown-body .bd-img-grid {
+  display: grid;
+  gap: 10px;
+  margin: 1.4em 0;
+  align-items: start;
+}
+#board .markdown-body .bd-img-grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+#board .markdown-body .bd-img-grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#board .markdown-body .bd-img-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  #board .markdown-body img.bd-portrait {
+    max-width: 78%;
+  }
+  #board .markdown-body .bd-img-grid.cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
