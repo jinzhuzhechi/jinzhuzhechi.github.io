@@ -69,6 +69,7 @@
 
   
 <link rel="stylesheet" href="/css/xhs/iconfont.css">
+<link rel="stylesheet" href="/css/blogdrop-indent.css">
 
 
 
@@ -313,42 +314,42 @@
 <h1>代码托管</h1>
 <ol>
 <li class="lvl-3">
-<p>在git中创建仓库，仓库名一定要设置为git的用户名</p>
+<p class="bd-indent">在git中创建仓库，仓库名一定要设置为git的用户名</p>
 </li>
 <li class="lvl-3">
-<p>在文件中找到_config.yml, 在文件的最末尾处修改和添加:</p>
+<p class="bd-indent">在文件中找到_config.yml, 在文件的最末尾处修改和添加:</p>
 </li>
 </ol>
-<p>···</p>
+<p class="bd-indent">···</p>
 <pre><code class="hljs">type: git
 repository: 代码的url或ssh
 branch: master
 </code></pre>
-<p>···</p>
+<p class="bd-indent">···</p>
 <ol start="3">
 <li class="lvl-3">
-<p>安装提交代码的插件<code>cnmp install --save hexo-deployer-git</code></p>
+<p class="bd-indent">安装提交代码的插件<code>cnmp install --save hexo-deployer-git</code></p>
 </li>
 <li class="lvl-3">
-<p>命令行<code>hexo d</code>推送本地文件到仓库，然后就可以用&quot;<a target="_blank" rel="noopener" href="http://xn--eqr924avxo.github.io">用户名.github.io</a>&quot;远程访问博客了</p>
+<p class="bd-indent">命令行<code>hexo d</code>推送本地文件到仓库，然后就可以用&quot;<a target="_blank" rel="noopener" href="http://xn--eqr924avxo.github.io">用户名.github.io</a>&quot;远程访问博客了</p>
 </li>
 </ol>
 <h1>换博客主题</h1>
 <ol>
 <li class="lvl-3">
-<p>查找论坛或者hexo官网找到合眼缘的主题找到对应的git库</p>
+<p class="bd-indent">查找论坛或者hexo官网找到合眼缘的主题找到对应的git库</p>
 </li>
 <li class="lvl-3">
-<p>git clone该库到blog/themes中</p>
+<p class="bd-indent">git clone该库到blog/themes中</p>
 </li>
 <li class="lvl-3">
-<p>在_config.yml中的theme处修改为你要用的库</p>
+<p class="bd-indent">在_config.yml中的theme处修改为你要用的库</p>
 </li>
 <li class="lvl-3">
-<p>重新推送你的库到git中就好了</p>
+<p class="bd-indent">重新推送你的库到git中就好了</p>
 </li>
 <li class="lvl-3">
-<p>具体页面的配置参考你的主题作者提供的参考</p>
+<p class="bd-indent">具体页面的配置参考你的主题作者提供的参考</p>
 </li>
 </ol>
 <h1>一些简单的使用</h1>
@@ -366,14 +367,14 @@ branch: master
 <p><code>hexo d</code>推送到git库</p>
 </li>
 </ol>
-<p>注：前三个为一套，可以每次修改配置的时候进行操作。如果只是写好单篇博客上传则只用4即可</p>
+<p class="bd-indent">注：前三个为一套，可以每次修改配置的时候进行操作。如果只是写好单篇博客上传则只用4即可</p>
 <h1>一些注意事项</h1>
 <ol>
 <li class="lvl-3">
-<p>建议使用ssh作连接，在git改变安全机制之后url不大好用，至少本人找不到好的解决方案应用到博客的创建</p>
+<p class="bd-indent">建议使用ssh作连接，在git改变安全机制之后url不大好用，至少本人找不到好的解决方案应用到博客的创建</p>
 </li>
 <li class="lvl-3">
-<p>建议找主题的时候找参考写的比较详细，适合和我一样的入门者做一些基础的设置</p>
+<p class="bd-indent">建议找主题的时候找参考写的比较详细，适合和我一样的入门者做一些基础的设置</p>
 </li>
 </ol>
 <h1>引用</h1>
@@ -388,10 +389,10 @@ branch: master
 <h1>后续的一些补充</h1>
 <ol>
 <li class="lvl-3">
-<p>不建议在管理员权限下创建博客，直接正常的权限创建即可。若在管理员权限下则不利于在其它的编辑器下直接修改文件</p>
+<p class="bd-indent">不建议在管理员权限下创建博客，直接正常的权限创建即可。若在管理员权限下则不利于在其它的编辑器下直接修改文件</p>
 </li>
 <li class="lvl-3">
-<p>建议更换hexo内置的markdown渲染引擎，方法参考<a target="_blank" rel="noopener" href="http://t.csdn.cn/QayjR">文章</a>。原始的引擎有些markdown语法无法正常渲染成字符</p>
+<p class="bd-indent">建议更换hexo内置的markdown渲染引擎，方法参考<a target="_blank" rel="noopener" href="http://t.csdn.cn/QayjR">文章</a>。原始的引擎有些markdown语法无法正常渲染成字符</p>
 </li>
 </ol>
 

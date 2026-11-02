@@ -64,6 +64,7 @@
 
   
 <link rel="stylesheet" href="/css/xhs/iconfont.css">
+<link rel="stylesheet" href="/css/blogdrop-indent.css">
 
 
 
@@ -305,15 +306,15 @@
           <h2 id="unicode-">Unicode 引用</h2>
           <hr>
 
-          <p>Unicode 是字体在网页端最原始的应用方式，特点是：</p>
+          <p class="bd-indent">Unicode 是字体在网页端最原始的应用方式，特点是：</p>
           <ul>
             <li>支持按字体的方式去动态调整图标大小，颜色等等。</li>
             <li>默认情况下不支持多色，直接添加多色图标会自动去色。</li>
           </ul>
           <blockquote>
-            <p>注意：新版 iconfont 支持两种方式引用多色图标：SVG symbol 引用方式和彩色字体图标模式。（使用彩色字体图标需要在「编辑项目」中开启「彩色」选项后并重新生成。）</p>
+            <p class="bd-indent">注意：新版 iconfont 支持两种方式引用多色图标：SVG symbol 引用方式和彩色字体图标模式。（使用彩色字体图标需要在「编辑项目」中开启「彩色」选项后并重新生成。）</p>
           </blockquote>
-          <p>Unicode 使用步骤如下：</p>
+          <p class="bd-indent">Unicode 使用步骤如下：</p>
           <h3 id="-font-face">第一步：拷贝项目下面生成的 <code>@font-face</code></h3>
 <pre><code class="language-css"
 >@font-face &#123;
@@ -337,7 +338,7 @@
 >&lt;span class="iconfont"&gt;&amp;#x33;&lt;/span&gt;
 </code></pre>
           <blockquote>
-            <p>"iconfont" 是你项目下的 font-family。可以通过编辑项目查看，默认是 "iconfont"。</p>
+            <p class="bd-indent">"iconfont" 是你项目下的 font-family。可以通过编辑项目查看，默认是 "iconfont"。</p>
           </blockquote>
           </div>
       </div>
@@ -358,13 +359,13 @@
         <h2 id="font-class-">font-class 引用</h2>
         <hr>
 
-        <p>font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。</p>
-        <p>与 Unicode 使用方式相比，具有如下特点：</p>
+        <p class="bd-indent">font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。</p>
+        <p class="bd-indent">与 Unicode 使用方式相比，具有如下特点：</p>
         <ul>
           <li>相比于 Unicode 语意明确，书写更直观。可以很容易分辨这个 icon 是什么。</li>
           <li>因为使用 class 来定义图标，所以当要替换图标时，只需要修改 class 里面的 Unicode 引用。</li>
         </ul>
-        <p>使用步骤如下：</p>
+        <p class="bd-indent">使用步骤如下：</p>
         <h3 id="-fontclass-">第一步：引入项目下面生成的 fontclass 代码：</h3>
 <pre><code class="language-html">&lt;link rel="stylesheet" href="./iconfont.css"&gt;
 </code></pre>
@@ -372,7 +373,7 @@
 <pre><code class="language-html">&lt;span class="iconfont icon-xxx"&gt;&lt;/span&gt;
 </code></pre>
         <blockquote>
-          <p>"
+          <p class="bd-indent">"
             iconfont" 是你项目下的 font-family。可以通过编辑项目查看，默认是 "iconfont"。</p>
         </blockquote>
       </div>
@@ -393,7 +394,7 @@
           <h2 id="symbol-">Symbol 引用</h2>
           <hr>
 
-          <p>这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇<a href="">文章</a>
+          <p class="bd-indent">这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇<a href="">文章</a>
             这种用法其实是做了一个 SVG 的集合，与另外两种相比具有如下特点：</p>
           <ul>
             <li>支持多色图标了，不再受单色限制。</li>
@@ -401,7 +402,7 @@
             <li>兼容性较差，支持 IE9+，及现代浏览器。</li>
             <li>浏览器渲染 SVG 的性能一般，还不如 png。</li>
           </ul>
-          <p>使用步骤如下：</p>
+          <p class="bd-indent">使用步骤如下：</p>
           <h3 id="-symbol-">第一步：引入项目下面生成的 symbol 代码：</h3>
 <pre><code class="language-html">&lt;script src="./iconfont.js"&gt;&lt;/script&gt;
 </code></pre>

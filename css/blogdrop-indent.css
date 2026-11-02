@@ -1,0 +1,21 @@
+/*
+ * 中文正文首行缩进（BlogDrop 维护）
+ * 由 scripts/blogdrop-indent.js 给「以文字开头」的段落加上 .bd-indent，
+ * Markdown 源文件里无需再手写 &emsp;&emsp;。
+ */
+#board .markdown-body p.bd-indent {
+  text-indent: 2em;
+}
+
+/* 引用、列表、表格中的段落不缩进 */
+#board .markdown-body blockquote p.bd-indent,
+#board .markdown-body li p.bd-indent,
+#board .markdown-body td p.bd-indent,
+#board .markdown-body th p.bd-indent {
+  text-indent: 0;
+}
+
+/* 居中图片容器保持居中 */
+#board .markdown-body div[align='center'] {
+  text-align: center;
+}
