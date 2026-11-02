@@ -6,7 +6,7 @@
  */
 #board .markdown-body img.bd-portrait {
   display: block;
-  max-width: 66%;
+  max-width: 50%;
   height: auto;
   margin: 1.4em auto;
 }
@@ -35,7 +35,7 @@
 
 @media (max-width: 600px) {
   #board .markdown-body img.bd-portrait {
-    max-width: 78%;
+    max-width: 60%;
   }
   #board .markdown-body .bd-img-grid.cols-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));

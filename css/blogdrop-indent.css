@@ -19,3 +19,32 @@
 #board .markdown-body div[align='center'] {
   text-align: center;
 }
+
+/* 首页 / 归档 / 分类等列表页的摘要：Fluid 用纯文本 div 展示，同样首行缩进两字符 */
+.index-excerpt,
+.index-excerpt > div,
+.index-excerpt p {
+  text-indent: 2em;
+}
+
+/* 首页摘要：正文前几段合并渲染，保留行内格式，限制为 3 行并显示省略号 */
+.index-excerpt > .index-excerpt-body,
+.index-excerpt .index-excerpt-body {
+  display: block !important;
+  width: 100%;
+  -webkit-line-clamp: unset !important;
+  line-height: 1.4rem;
+}
+.index-excerpt-body > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  line-height: 1.4rem;
+  text-indent: 2em;
+}
+.index-excerpt-body strong,
+.index-excerpt-body em {
+  color: inherit;
+}
